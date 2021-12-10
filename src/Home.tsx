@@ -35,7 +35,6 @@ interface DragEvent<T = Element> extends React.MouseEvent<T, Event> {
             }])
             setitem('');
             setcateg('')
-            console.log('list items ',listitems)
         }
     }
 
@@ -70,11 +69,9 @@ interface DragEvent<T = Element> extends React.MouseEvent<T, Event> {
         if(ind.replace(/[^a-z]/gi, '') === "food"){
             something = toJS(store.tasks.food);
             updatedarr = [...something,newTask]
-            console.log('on drag ')
             store.tasks['food']=updatedarr
         }
         else if(ind.replace(/[^a-z]/gi, '') === 'entertainment'){
-            console.log('this is entertainment')
             something = toJS(store.tasks.entertainment);
             updatedarr = [...something,newTask]
             store.tasks['entertainment']=updatedarr
@@ -93,11 +90,6 @@ interface DragEvent<T = Element> extends React.MouseEvent<T, Event> {
                 setsuccessString('');
             },5000)
         }
-        console.log('here are the tasks ',toJS(store.tasks))
-        
-        // const something = tasks[food].map((some: string[]) => {
-        //     console.log(some)
-        // })
     }
     return (
         <div className='w-screen'>

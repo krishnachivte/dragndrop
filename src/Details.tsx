@@ -12,7 +12,6 @@ function Details(props:any) {
         store.category = category;
     }
 
-    console.log('category ',category, toJS(store.tasks),toJS(store.ondata));
     category = category && category.replace(/[^a-z]/gi, '')
     const iterate:Item[] =  category === "food" ? store.ondata.food 
                     : category === "electricals" ? store.ondata.electricals
